@@ -1,0 +1,1787 @@
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #070a0f;
+    color: #cfd3da;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    background: #080b10;
+    border-bottom: 1px solid #151b24;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #8b5cf6;
+    text-decoration: none;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.nav-links a:nth-child(1) {
+    color: #ffffff;
+}
+
+.nav-links a:nth-child(2) {
+    color: #8b5cf6;
+}
+
+.nav-links a:nth-child(3) {
+    color: #ffffff;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+
+
+/* =========================
+   NAVBAR MELODY
+   ========================= */
+
+.melody {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #8b5cf6;
+    font-size: 20px;
+
+    pointer-events: none;
+}
+
+.melody span {
+    display: inline-block;
+
+    opacity: 0;
+
+    animation:
+        musicFloat 2.4s ease-in-out infinite;
+}
+
+.melody span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.melody span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.melody span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.melody span:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.melody span:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+@keyframes musicFloat {
+
+    0% {
+        transform: translateY(8px) scale(0.8);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-12px) scale(1.1);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   HOME HERO
+   ========================= */
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        #070a0f;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.small-title {
+    color: #8b5cf6;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #ffffff;
+
+    font-size: clamp(48px, 7vw, 76px);
+
+    line-height: 1.05;
+
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #8b5cf6;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 560px;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.main-button,
+.lesson-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 13px 22px;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.main-button:hover,
+.lesson-button:hover {
+    background: #3b82f6;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   HOME SECTIONS
+   ========================= */
+
+.features,
+.home-lessons,
+.how-it-works {
+    padding: 80px 8%;
+}
+
+.features h2,
+.home-lessons h2,
+.how-it-works h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FEATURE CARDS
+   ========================= */
+
+.feature-container {
+    display: flex;
+    gap: 24px;
+}
+
+.feature-card {
+    flex: 1;
+
+    padding: 30px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    background: #0e141d;
+
+    border-color: #26364c;
+}
+
+.feature-card .icon {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #ffffff;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HOME LESSON PREVIEW
+   ========================= */
+
+.lesson-preview {
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1622,
+            #0b0f15
+        );
+
+    border: 1px solid #1c2a3b;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lesson-preview::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: rgba(37, 99, 235, 0.12);
+
+    border-radius: 50%;
+
+    right: -50px;
+    top: -50px;
+}
+
+.lesson-tag {
+    color: #ef4444;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.lesson-preview h3 {
+    color: #ffffff;
+
+    font-size: 28px;
+
+    margin: 12px 0;
+}
+
+.lesson-preview p {
+    max-width: 600px;
+
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HOW IT WORKS
+   ========================= */
+
+.steps {
+    display: flex;
+    gap: 24px;
+}
+
+.step {
+    flex: 1;
+
+    padding: 30px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 20px;
+
+    transition: 0.2s ease;
+}
+
+.step:hover {
+    transform: translateY(-4px);
+
+    border-color: #26364c;
+}
+
+.step > span {
+    color: #ef4444;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.step h3 {
+    color: #ffffff;
+
+    margin: 12px 0 8px;
+}
+
+.step p {
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   LESSONS PAGE
+   ================================================== */
+
+
+/* =========================
+   LESSON HERO
+   ========================= */
+
+.lessons-hero {
+    padding: 100px 10% 80px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        #070a0f;
+}
+
+.lessons-hero h1 {
+    color: #ffffff;
+
+    font-size: clamp(45px, 7vw, 72px);
+
+    line-height: 1.05;
+
+    margin: 15px 0 20px;
+}
+
+.lessons-hero h1 span {
+    color: #8b5cf6;
+}
+
+.lessons-hero p {
+    max-width: 600px;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LESSONS SECTION
+   ========================= */
+
+.lessons-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 8%;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: #9ca3af;
+}
+
+
+/* =========================
+   LESSON GRID
+   ========================= */
+
+.lesson-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================
+   LESSON CARDS
+   ========================= */
+
+.lesson-card {
+    padding: 32px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+
+    background: #0e141d;
+
+    border-color: #26364c;
+}
+
+.lesson-card.featured {
+    background:
+        linear-gradient(
+            135deg,
+            #0d1622,
+            #0c1118
+        );
+
+    border-color: #24344a;
+}
+
+.card-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.card-tag {
+    color: #ef4444;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.card-tag.coming {
+    color: #6b7280;
+}
+
+.lesson-card h3 {
+    color: #ffffff;
+
+    font-size: 27px;
+
+    margin: 8px 0;
+}
+
+.lesson-card p {
+    color: #9ca3af;
+
+    max-width: 480px;
+
+    line-height: 1.7;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   DISABLED BUTTON
+   ========================= */
+
+.disabled-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    background: #111720;
+
+    border: 1px solid #202a36;
+
+    color: #626b78;
+
+    font-weight: 700;
+
+    cursor: default;
+}
+
+
+/* =========================
+   MUSIC THEORY
+   ========================= */
+
+.theory-section {
+    max-width: 1040px;
+
+    margin: 30px auto 80px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101521,
+            #0b0f15
+        );
+
+    border: 1px solid #1c2a3b;
+
+    border-radius: 22px;
+}
+
+.theory-section h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 8px 0 12px;
+}
+
+.theory-section p {
+    max-width: 650px;
+
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+.theory-symbol {
+    color: #8b5cf6;
+
+    font-size: 90px;
+
+    opacity: 0.8;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   LEARN SECTION
+   ========================= */
+
+.learn-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 8% 80px;
+}
+
+.learn-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.learn-step {
+    padding: 28px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 18px;
+}
+
+.learn-step > span {
+    color: #ef4444;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.learn-step h3 {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    margin: 10px 0;
+}
+
+.learn-step p {
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LESSONS BOTTOM
+   ========================= */
+
+.lessons-bottom {
+    text-align: center;
+
+    padding: 80px 8%;
+
+    border-top: 1px solid #151b24;
+}
+
+.lessons-bottom h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.lessons-bottom p {
+    color: #9ca3af;
+}
+
+
+/* ==================================================
+   GUITAR LESSON PAGE
+   ================================================== */
+
+.lesson-hero {
+    padding: 100px 10% 70px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        #070a0f;
+}
+
+.lesson-hero h1 {
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 68px);
+
+    line-height: 1.05;
+
+    margin: 15px 0 20px;
+}
+
+.lesson-hero p {
+    max-width: 600px;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   GUITAR SECTIONS
+   ========================= */
+
+.guitar-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 70px 8%;
+
+    border-bottom: 1px solid #151b24;
+}
+
+.lesson-number {
+    color: #ef4444;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.guitar-section h2 {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    margin: 10px 0 15px;
+}
+
+.guitar-section > p {
+    color: #9ca3af;
+
+    max-width: 700px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GUITAR TIP
+   ========================= */
+
+.guitar-tip {
+    margin-top: 25px;
+
+    padding: 20px 24px;
+
+    background: #0c1118;
+
+    border-left: 3px solid #8b5cf6;
+
+    border-radius: 12px;
+}
+
+.guitar-tip strong {
+    color: #8b5cf6;
+}
+
+.guitar-tip p {
+    color: #9ca3af;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   GUITAR STRINGS
+   ========================= */
+
+.string-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.string-list div {
+    padding: 20px;
+
+    text-align: center;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.string-list strong {
+    display: block;
+
+    color: #ef4444;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   CHORD CHARTS
+   ========================= */
+
+.chord-charts {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    margin-top: 35px;
+}
+
+.chord-chart {
+    flex: 1;
+
+    max-width: 260px;
+
+    padding: 25px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.chord-chart:hover {
+    transform: translateY(-4px);
+
+    border-color: #26364c;
+}
+
+.chord-chart h3 {
+    color: #8b5cf6;
+
+    font-size: 38px;
+}
+
+.chord-chart > p {
+    color: #9ca3af;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CHORD DIAGRAM
+   ========================= */
+
+.chord-diagram {
+    position: relative;
+
+    width: 150px;
+    height: 180px;
+
+    margin: 0 auto 15px;
+}
+
+
+/* STRINGS */
+
+.chord-diagram .string {
+    position: absolute;
+
+    top: 25px;
+    bottom: 5px;
+
+    width: 2px;
+
+    background: #777;
+
+    z-index: 2;
+}
+
+.s1 {
+    left: 15px;
+}
+
+.s2 {
+    left: 39px;
+}
+
+.s3 {
+    left: 63px;
+}
+
+.s4 {
+    left: 87px;
+}
+
+.s5 {
+    left: 111px;
+}
+
+.s6 {
+    left: 135px;
+}
+
+
+/* FRETS */
+
+.chord-diagram .fret {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    height: 2px;
+
+    background: #555;
+
+    z-index: 1;
+}
+
+.f1 {
+    top: 62px;
+}
+
+.f2 {
+    top: 98px;
+}
+
+.f3 {
+    top: 134px;
+}
+
+.f4 {
+    top: 170px;
+}
+
+
+/* NUT */
+
+.chord-nut {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+
+    top: 23px;
+
+    height: 5px;
+
+    background: #ffffff;
+
+    border-radius: 3px;
+
+    z-index: 3;
+}
+
+
+/* FINGERS */
+
+.finger {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    z-index: 5;
+}
+
+
+/* G */
+
+.g1 {
+    left: 28px;
+    top: 108px;
+}
+
+.g2 {
+    left: 52px;
+    top: 72px;
+}
+
+.g3 {
+    left: 124px;
+    top: 108px;
+}
+
+
+/* C */
+
+.c1 {
+    left: 100px;
+    top: 108px;
+}
+
+.c2 {
+    left: 76px;
+    top: 72px;
+}
+
+.c3 {
+    left: 52px;
+    top: 36px;
+}
+
+
+/* D */
+
+.d1 {
+    left: 76px;
+    top: 72px;
+}
+
+.d2 {
+    left: 100px;
+    top: 108px;
+}
+
+.d3 {
+    left: 52px;
+    top: 108px;
+}
+
+
+/* OPEN STRINGS */
+
+.open {
+    position: absolute;
+
+    top: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    z-index: 5;
+}
+
+.o1 {
+    left: 32px;
+}
+
+.o2 {
+    left: 128px;
+}
+
+
+/* CHORD INFO */
+
+.chord-info {
+    display: block;
+
+    color: #7f8794;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CHORD PROGRESSION
+   ========================= */
+
+.progression {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin: 35px 0 15px;
+}
+
+.progression span {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0c1118;
+
+    border: 1px solid #26364c;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.progression span:hover {
+    background: #18243a;
+
+    transform: translateY(-3px);
+}
+
+.progression-text {
+    text-align: center;
+
+    margin: 0 auto;
+
+    color: #8b5cf6 !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   PRACTICE
+   ========================= */
+
+.practice-section {
+    max-width: 1000px;
+
+    margin: 50px auto;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1622,
+            #0b0f15
+        );
+
+    border: 1px solid #1c2a3b;
+
+    border-radius: 22px;
+}
+
+.practice-section h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 10px 0;
+}
+
+.practice-section > p {
+    color: #9ca3af;
+
+    max-width: 650px;
+}
+
+.practice-list {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.practice-list div {
+    padding: 14px 18px;
+
+    background: #0c1118;
+
+    border-radius: 12px;
+
+    color: #cfd3da;
+}
+
+
+/* =========================
+   NEXT LESSON
+   ========================= */
+
+.next-lesson {
+    text-align: center;
+
+    padding: 80px 8%;
+}
+
+.next-lesson h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.next-lesson p {
+    color: #9ca3af;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   ABOUT PAGE
+   ================================================== */
+
+.about-hero {
+    padding: 100px 10% 80px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        #070a0f;
+}
+
+.about-hero h1 {
+    max-width: 850px;
+
+    color: #ffffff;
+
+    font-size: clamp(45px, 7vw, 72px);
+
+    line-height: 1.05;
+
+    margin: 15px 0 20px;
+}
+
+.about-hero h1 span {
+    color: #8b5cf6;
+}
+
+.about-hero p {
+    max-width: 650px;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* ABOUT SECTIONS */
+
+.about-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 80px 8%;
+}
+
+.about-section h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 8px 0 20px;
+}
+
+.about-section > p {
+    max-width: 720px;
+
+    color: #9ca3af;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* ABOUT HIGHLIGHT */
+
+.about-highlight {
+    max-width: 1040px;
+
+    margin: 20px auto 40px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101521,
+            #0b0f15
+        );
+
+    border: 1px solid #1c2a3b;
+
+    border-radius: 22px;
+}
+
+.about-highlight h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 10px 0;
+}
+
+.about-highlight p {
+    max-width: 650px;
+
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+.mission-symbol {
+    font-size: 80px;
+
+    opacity: 0.8;
+
+    flex-shrink: 0;
+}
+
+
+/* ABOUT CARDS */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+    margin-top: 35px;
+}
+
+.about-card {
+    padding: 28px;
+
+    background: #0c1118;
+
+    border: 1px solid #18202c;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+
+    background: #0e141d;
+
+    border-color: #26364c;
+}
+
+.about-icon {
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* ALWAYS FREE */
+
+.free-section {
+    max-width: 1040px;
+
+    margin: 20px auto 40px;
+
+    padding: 55px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1622,
+            #0b0f15
+        );
+
+    border: 1px solid #1c2a3b;
+
+    border-radius: 22px;
+}
+
+.free-section h2 {
+    color: #ffffff;
+
+    font-size: 34px;
+
+    margin: 10px 0;
+}
+
+.free-section p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #9ca3af;
+
+    line-height: 1.7;
+}
+
+
+/* FUTURE */
+
+.future-section {
+    padding-bottom: 100px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 60px 8%;
+
+    background: #080b10;
+
+    border-top: 1px solid #151b24;
+
+    text-align: center;
+}
+
+footer h3 {
+    color: #8b5cf6;
+
+    font-size: 26px;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #8f96a3;
+}
+
+footer .copyright {
+    font-size: 13px;
+
+    margin-top: 25px;
+
+    color: #606875;
+}
+
+
+/* =========================
+   TEXT SELECTION
+   ========================= */
+
+::selection {
+    background: #8b5cf6;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #070a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #252d39;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b4656;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+    /* NAV */
+
+    nav {
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .melody {
+        display: none;
+    }
+
+
+    /* HOME */
+
+    .hero {
+        padding: 70px 7%;
+    }
+
+    .features,
+    .home-lessons,
+    .how-it-works {
+        padding: 60px 7%;
+    }
+
+    .feature-container,
+    .steps {
+        flex-direction: column;
+    }
+
+
+    /* LESSONS */
+
+    .lessons-hero {
+        padding: 70px 7% 55px;
+    }
+
+    .lessons-section {
+        padding: 60px 7%;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theory-section {
+        margin: 20px 7% 60px;
+
+        padding: 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .theory-symbol {
+        font-size: 65px;
+    }
+
+    .learn-section {
+        padding: 30px 7% 60px;
+    }
+
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* GUITAR */
+
+    .lesson-hero {
+        padding: 70px 7% 50px;
+    }
+
+    .guitar-section {
+        padding: 55px 7%;
+    }
+
+    .string-list {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .chord-charts {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .chord-chart {
+        width: 100%;
+
+        max-width: 320px;
+    }
+
+    .practice-section {
+        margin: 30px 7%;
+
+        padding: 30px;
+    }
+
+
+    /* ABOUT */
+
+    .about-hero {
+        padding: 70px 7% 55px;
+    }
+
+    .about-section {
+        padding: 60px 7%;
+    }
+
+    .about-highlight {
+        margin: 20px 7% 40px;
+
+        padding: 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .mission-symbol {
+        font-size: 65px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .free-section {
+        margin: 20px 7% 40px;
+
+        padding: 35px 25px;
+    }
+
+}

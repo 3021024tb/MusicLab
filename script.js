@@ -1,0 +1,1 @@
+console.log("MusicLab loaded successfully!");
